@@ -77,22 +77,32 @@
 
  <section id="contact">
     <h1>Contact </h1>
-    <div class="two">
+    <form id="two">
         <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Enter Name"><br>
+        <input type="text" id="name" placeholder="Enter Name" required><br>
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required style="margin-top: 10px;"><br>
+        <input type="email" id="email" name="email" required ><br>
+        <style>
+            #email{
+                margin-top: 10px;
+            }
+            #message{
+                margin-right:20px; 
+                margin-top:10px; 
+                border-radius:10px;
+            }
+        </style>
         <label for="message" style="margin-left: -10px;">Message</label>
-        <textarea id="message" name="message" rows="5" required style="margin-right:20px; margin-top:10px; border-radius:10px;"></textarea><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br>
         <input style="align-items:center;" type="submit" value="Submit">
-    </div>
+    </form>
 </section>
 
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        document.getElementsByClassName('two').addEventListener('submit', function(event) {
+        document.getElementsById('two').addEventListener('submit', function(event) {
             event.preventDefault();
             
             var name = document.getElementById('name').value;
